@@ -1,9 +1,29 @@
 <?php
-
-# References:
-# https://github.com/php-webdriver/php-webdriver
-# https://github.com/php-webdriver/php-webdriver/blob/main/example.php
-# https://github.com/php-webdriver/php-webdriver/wiki/Example-command-reference
+/*
+ * Selenium Tests
+ *
+ * References:
+ * https://github.com/php-webdriver/php-webdriver
+ * https://github.com/php-webdriver/php-webdriver/blob/main/example.php
+ * https://github.com/php-webdriver/php-webdriver/wiki/Example-command-reference
+*/
+function fatal_handler() {
+    /*$errfile = "unknown file";
+    $errstr  = "shutdown";
+    $errno   = E_CORE_ERROR;
+    $errline = 0;
+    $error = error_get_last();
+    if($error !== NULL) {
+        $errno   = $error["type"];
+        $errfile = $error["file"];
+        $errline = $error["line"];
+        $errstr  = $error["message"];
+        echo "FATAL ERROR: $errno, $errstr, $errfile, $errline";
+    }*/
+    # close the browser as the last thing to do before quitting
+    global $driver;
+    $driver->quit();
+}
 
 
 namespace Facebook\WebDriver;
@@ -18,25 +38,12 @@ require_once('vendor/autoload.php');
 echo "Testing...\n";
 
 # SETUP 0: catch fatal errors for proper browser showtdown
-function fatal_handler() {
-    $errfile = "unknown file";
-    $errstr  = "shutdown";
-    $errno   = E_CORE_ERROR;
-    $errline = 0;
-    $error = error_get_last();
-    if($error !== NULL) {
-        $errno   = $error["type"];
-        $errfile = $error["file"];
-        $errline = $error["line"];
-        $errstr  = $error["message"];
-        echo "FATAL ERROR: $errno, $errstr, $errfile, $errline";
-    }
-    $driver->quit();
-}
+#########
 register_shutdown_function( 'fatal_handler' );
 
 
-# SETUP
+# SETUP DRIVER
+##############
 
 # geckodriver (or other) listening port
 $serverUrl = 'http://localhost:4444';
@@ -55,6 +62,7 @@ $driver = RemoteWebDriver::create($serverUrl, $desiredCapabilities);
 
 
 # TEST 1
+########
 
 try {
 	# open the web site with the automated browser
@@ -62,7 +70,7 @@ try {
 
 	# select a product from the checkboxes
 	$productName = "Cacauets";
-	$element = $driver->findElement(WebDriverBy::cssSelector("input[value='$productName']"));
+	#$element = $driver->findElement(WebDriverBy::cssSelector("input[value='$productName']"));
 	$element->click();
 
 	# send form
