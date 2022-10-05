@@ -9,7 +9,10 @@ You need to have installed:
   * composer: https://getcomposer.org/download/
   * geckodriver: https://github.com/mozilla/geckodriver/releases
 
-Main reference is the website https://github.com/php-webdriver/php-webdriver
+References:
+  * Selenium PHP Driver: https://github.com/php-webdriver/php-webdriver
+  * Example: https://github.com/php-webdriver/php-webdriver/blob/main/example.php
+  * Doc: https://github.com/php-webdriver/php-webdriver/wiki/Example-command-reference
 
 ## General procedure
 
