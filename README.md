@@ -34,3 +34,9 @@ Start geckodriver (by default listens in port 4444) in another shell:
 Start Selenium tests (in a 3rd shell):
 
     $ php test1.php
+
+
+## Troubleshooting
+
+If the test errors do not appear, open your php.ini file (usually ``/etc/php/X.Y/cli/php.ini``) and check the variable ``zend.assertions = 1``.
+
