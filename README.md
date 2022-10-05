@@ -16,6 +16,12 @@ References:
 
 ## General procedure
 
+Clone repo and download packages:
+
+    $ git clone https://github.com/emieza/selenium-php
+    $ cd selenium-php
+    $ composer install
+
 Start webapp in port 8000 in an independent shell:
 
     $ cd src
