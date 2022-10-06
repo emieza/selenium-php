@@ -7,6 +7,7 @@
  * https://github.com/php-webdriver/php-webdriver/blob/main/example.php
  * https://github.com/php-webdriver/php-webdriver/wiki/Example-command-reference
 */
+
 function fatal_handler() {
     /*$errfile = "unknown file";
     $errstr  = "shutdown";
@@ -22,18 +23,21 @@ function fatal_handler() {
     }*/
     # close the browser as the last thing to do before quitting
     global $driver;
-    $driver->quit();
+    if( $driver )
+	    $driver->quit();
 }
-
 
 namespace Facebook\WebDriver;
 #use Facebook\WebDriver\WebDriverBy;
-
 use Facebook\WebDriver\Remote\RemoteWebDriver;
 use Facebook\WebDriver\Firefox\FirefoxOptions;
 use Facebook\WebDriver\Remote\DesiredCapabilities;
-
+# Load dependencies
 require_once('vendor/autoload.php');
+
+# global settings
+define('SLEEP_ACTIVE',false);
+define('HEADLESS',false);
 
 echo "Testing...\n";
 
@@ -54,7 +58,8 @@ $desiredCapabilities = DesiredCapabilities::firefox();
 $desiredCapabilities->setCapability('acceptSslCerts', false);
 // Add arguments via FirefoxOptions to start headless firefox
 $firefoxOptions = new FirefoxOptions();
-#$firefoxOptions->addArguments(['-headless']);
+if( HEADLESS )
+	$firefoxOptions->addArguments(['-headless']);
 $desiredCapabilities->setCapability(FirefoxOptions::CAPABILITY, $firefoxOptions);
 
 # create driver
@@ -74,7 +79,7 @@ try {
 	$element->click();
 
 	# send form
-	sleep(1); # for visual sake
+	if(SLEEP_ACTIVE) sleep(1); # for visual sake
 	$element = $driver->findElement(WebDriverBy::cssSelector('#submit'));
 	$element->click();
 
@@ -96,6 +101,6 @@ catch (\Exception $e) {
 }
 
 # close the automated browser
-sleep(1); # for visual sake
+if(SLEEP_ACTIVE) sleep(1); # for visual sake
 $driver->quit();
 
