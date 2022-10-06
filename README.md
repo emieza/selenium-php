@@ -43,8 +43,9 @@ If the test errors do not appear, open your php.ini file (usually ``/etc/php/X.Y
 ## Exercises
 
   1. Install and execute the first test.
-  2. Modify test1.php so that you add a name in the user field.
+  2. Modify ``test1.php`` so that you add a name in the user field. Check the [documentation](https://github.com/php-webdriver/php-webdriver/wiki/Example-command-reference) for that.
   3. Put a random name in the user field (create a hardcoded list of possible names).
-  4. Choose a product of the products.txt file insted of a fixed one.
-  5. Choose 3 products of the products.txt file (and check all of them).
+  4. Check that the introduced name is present in the last line in the ``comanda.txt`` file
+  5. Choose a product of the ``products.txt`` file insted of a fixed one.
+  6. Choose 3 products of the ``products.txt`` file (and check all of them).
 
