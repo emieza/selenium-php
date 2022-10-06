@@ -75,7 +75,7 @@ try {
 
 	# select a product from the checkboxes
 	$productName = "Cacauets";
-	$element = $driver->findElement(WebDriverBy::cssSelector("input[value='$productName']"));
+	#$element = $driver->findElement(WebDriverBy::cssSelector("input[value='$productName']"));
 	$element->click();
 
 	# send form
