@@ -24,18 +24,18 @@ Clone repo and download packages:
     $ cd selenium-php
     $ composer install
 
-#### Shell 1: web server
+### Shell 1: web server
 Start webapp in port 8000 in an independent shell:
 
     $ cd src
     $ php -S 0.0.0.0:8000
 
-#### Shell 2: start geckodriver
+### Shell 2: start geckodriver
 Start geckodriver (by default listens in port 4444) in another shell:
 
     $ geckodriver
 
-#### Shell 3: execute tests
+### Shell 3: execute tests
 Run the Selenium basic tests (in a 3rd shell):
 
     $ php test1.php
