@@ -40,3 +40,9 @@ Start Selenium tests (in a 3rd shell):
 
 If the test errors do not appear, open your php.ini file (usually ``/etc/php/X.Y/cli/php.ini``) and check the variable ``zend.assertions = 1``.
 
+## Exercises
+
+  1. Install and execute the first test.
+  2. Modify test1.php so that you add a name in the user field.
+  3. ...
+
