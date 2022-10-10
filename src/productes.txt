@@ -1,6 +1,6 @@
-Peres Ercolines
-Meló pell de gripau
-Pebrots vermells
-Pebrots verds
-Nectarines
-Cacauets
+Peres Ercolines;4.96;peras premium
+Meló pell de gripau;3.50;melón del bueno
+Pebrots vermells;1.35;oferta
+Pebrots verds;2.00;oferta 2x1
+Nectarines;2.50;no son melocotones
+Cacauets;6.00;muy caro
