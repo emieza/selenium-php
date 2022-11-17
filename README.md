@@ -19,6 +19,7 @@ References:
 ## General procedure
 
 Install dependencies:
+
     $ sudo apt install php-curl php-mbstring php-xml
 
 Install composer from here: https://getcomposer.org/download/
